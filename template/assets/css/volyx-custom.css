@@ -1,0 +1,433 @@
+/* Volyx Custom Color Overrides */
+:root {
+    --volyx-primary: #1F2932;
+    --volyx-secondary: #5856D6;
+    --volyx-success: #34C759;
+    --volyx-warning: #FF9500;
+    --volyx-error: #FF3B30;
+}
+
+/* Make header app image bigger */
+.header-image .image {
+    width: 115% !important;
+    max-width: 115% !important;
+    transform: scale(1.15) !important;
+    transform-origin: center center !important;
+}
+
+@media (max-width: 767px) {
+    .header-image .image {
+        width: 108% !important;
+        max-width: 108% !important;
+        transform: scale(1.08) !important;
+    }
+}
+
+/* Override main blue color with Volyx dark blue */
+.main-btn {
+    background-color: var(--volyx-primary) !important;
+    border-color: var(--volyx-primary) !important;
+}
+
+.main-btn:hover {
+    background-color: #2a3a47 !important;
+    border-color: #2a3a47 !important;
+}
+
+.main-btn-2 {
+    color: var(--volyx-primary) !important;
+    border-color: var(--volyx-primary) !important;
+}
+
+.main-btn-2:hover {
+    background-color: var(--volyx-primary) !important;
+    color: white !important;
+}
+
+/* Header and navigation */
+.header-hero .header-title span {
+    color: var(--volyx-primary) !important;
+}
+
+.navbar-nav .nav-item .page-scroll:hover {
+    color: var(--volyx-primary) !important;
+}
+
+/* Update active navigation color to dark blue and add outline for selected badge */
+.navbar-nav .nav-item.active > a, 
+.navbar-nav .nav-item:hover > a {
+    color: var(--volyx-primary) !important;
+}
+
+/* Add rounded rectangle badge for the selected page indicator - only on large screens */
+.navbar-nav .nav-item.active {
+    position: relative;
+}
+
+.navbar-nav .nav-item.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 20px);
+    height: 24px;
+    background-color: white;
+    border: 2px solid var(--volyx-primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(31, 41, 50, 0.15);
+    z-index: -1;
+    animation: smoothDrawBadge 0.6s ease-out forwards;
+    transition: none;
+}
+
+/* Prevent badge from disappearing during scroll */
+.navbar-nav .nav-item:not(.active)::after {
+    display: none;
+    transition: none;
+}
+
+/* Smooth drawing animation for the badge */
+@keyframes smoothDrawBadge {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    30% {
+        width: calc(100% + 20px);
+        height: 0;
+        opacity: 1;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    60% {
+        width: calc(100% + 20px);
+        height: 24px;
+        opacity: 1;
+        background-color: transparent;
+        border-color: var(--volyx-primary);
+    }
+    100% {
+        width: calc(100% + 20px);
+        height: 24px;
+        opacity: 1;
+        background-color: white;
+        border-color: var(--volyx-primary);
+    }
+}
+
+/* Hide the badge on tablets and phones */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item.active::after {
+        display: none;
+    }
+}
+
+/* Services/Features sections - Updated with bubble colors */
+.single-services.services-color-1 .services-icon {
+    background-color: var(--volyx-secondary) !important;
+}
+
+.single-services.services-color-1 .services-icon::before {
+    background-color: rgba(88, 86, 214, 0.15) !important;
+}
+
+.single-services.services-color-2 .services-icon {
+    background-color: var(--volyx-success) !important;
+}
+
+.single-services.services-color-2 .services-icon::before {
+    background-color: rgba(52, 199, 89, 0.12) !important;
+}
+
+.single-services.services-color-3 .services-icon {
+    background-color: var(--volyx-warning) !important;
+}
+
+.single-services.services-color-3 .services-icon::before {
+    background-color: rgba(255, 149, 0, 0.14) !important;
+}
+
+.single-services.services-color-4 .services-icon {
+    background-color: var(--volyx-primary) !important;
+}
+
+.single-services.services-color-4 .services-icon::before {
+    background-color: rgba(31, 41, 50, 0.1) !important;
+}
+
+.single-features.features-color-1 .features-icon {
+    background-color: var(--volyx-secondary) !important;
+}
+
+/* Links and interactive elements */
+a:hover {
+    color: var(--volyx-primary) !important;
+}
+
+.section-title .title {
+    color: var(--volyx-primary) !important;
+}
+
+/* Buttons and CTAs */
+.header-video:hover {
+    background-color: var(--volyx-primary) !important;
+}
+
+/* Footer links */
+.footer-link .link a:hover {
+    color: var(--volyx-primary) !important;
+}
+
+/* Testimonials and other accent elements */
+.testimonial-quote {
+    background-color: var(--volyx-primary) !important;
+}
+
+/* Pricing section */
+.pricing-active {
+    border-color: var(--volyx-primary) !important;
+}
+
+/* Download section */
+.download-content .download-title {
+    color: var(--volyx-primary) !important;
+}
+
+/* Override any remaining blue elements */
+[style*="#0898E7"] {
+    color: var(--volyx-primary) !important;
+}
+
+[style*="background-color: #0898E7"] {
+    background-color: var(--volyx-primary) !important;
+}
+
+[style*="border-color: #0898E7"] {
+    border-color: var(--volyx-primary) !important;
+}
+
+/* White text with black outline for "Cu Organizațiile Fără Efort." (the text between span and paragraph) */
+.header-title {
+    color: white !important;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         2px  2px 4px rgba(0,0,0,0.5) !important;
+}
+
+/* Keep the span text in the original color */
+.header-title span {
+    color: var(--volyx-primary) !important;
+    text-shadow: none !important;
+}
+
+/* Button container alignment - ensure buttons are on same line */
+.header-hero-content ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.header-hero-content ul li {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Play button styling - Modern and Professional with Pulse Effect */
+.header-hero-content .header-video {
+    background-color: white !important;
+    border: 2px solid var(--volyx-primary) !important;
+    color: var(--volyx-primary) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(31, 41, 50, 0.15) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: volyxPulse 2s infinite !important;
+}
+
+.header-hero-content .header-video:hover {
+    background-color: var(--volyx-primary) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 30px rgba(31, 41, 50, 0.25) !important;
+    animation: none !important;
+}
+
+.header-hero-content .header-video::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    background-color: rgba(31, 41, 50, 0.1) !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: width 0.6s ease, height 0.6s ease !important;
+}
+
+.header-hero-content .header-video:hover::before {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.header-hero-content .header-video i {
+    font-size: 16px !important;
+    line-height: 1 !important;
+    margin-left: 2px !important;
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+/* Custom pulse animation for the play button */
+@keyframes volyxPulse {
+    0% {
+        box-shadow: 
+            0 0 0 0 rgba(31, 41, 50, 0.4),
+            0 4px 20px rgba(31, 41, 50, 0.15);
+    }
+    70% {
+        box-shadow: 
+            0 0 0 8px rgba(31, 41, 50, 0),
+            0 4px 20px rgba(31, 41, 50, 0.15);
+    }
+    100% {
+        box-shadow: 
+            0 0 0 0 rgba(31, 41, 50, 0),
+            0 4px 20px rgba(31, 41, 50, 0.15);
+    }
+}
+
+/* Background bubbles with Volyx color palette - Simple and Modern */
+.header-hero .shape.shape-1 {
+    background-color: rgba(88, 86, 214, 0.15) !important;
+    box-shadow: 0 0 20px rgba(88, 86, 214, 0.2) !important;
+}
+
+.header-hero .shape.shape-2 {
+    background-color: rgba(52, 199, 89, 0.12) !important;
+    box-shadow: 0 0 15px rgba(52, 199, 89, 0.15) !important;
+}
+
+.header-hero .shape.shape-3 {
+    background-color: rgba(31, 41, 50, 0.1) !important;
+    box-shadow: 0 0 18px rgba(31, 41, 50, 0.12) !important;
+}
+
+.header-hero .shape.shape-4 {
+    background-color: rgba(255, 149, 0, 0.14) !important;
+    box-shadow: 0 0 16px rgba(255, 149, 0, 0.18) !important;
+}
+
+.header-hero .shape.shape-5 {
+    background-color: rgba(88, 86, 214, 0.11) !important;
+    box-shadow: 0 0 14px rgba(88, 86, 214, 0.13) !important;
+}
+
+.header-hero .shape.shape-6 {
+    background-color: rgba(52, 199, 89, 0.13) !important;
+    box-shadow: 0 0 12px rgba(52, 199, 89, 0.16) !important;
+}
+
+/* About section background shape - Simple gradient */
+.about-image .about-shape {
+    background: linear-gradient(135deg, rgba(31, 41, 50, 0.2) 0%, rgba(88, 86, 214, 0.25) 100%) !important;
+    box-shadow: 0 0 30px rgba(88, 86, 214, 0.15) !important;
+}
+
+.about-image .about-shape::before {
+    border: 2px solid rgba(88, 86, 214, 0.3) !important;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    box-shadow: 0 0 20px rgba(88, 86, 214, 0.2) !important;
+}
+
+/* Features section shape - Simple solid color */
+.features-image .features-shape-1 {
+    background-color: rgba(255, 149, 0, 0.18) !important;
+    box-shadow: 0 0 25px rgba(255, 149, 0, 0.2) !important;
+}
+
+/* Download section shape - Simple solid color */
+.download-area .download-image .download-shape-1 {
+    background-color: rgba(88, 86, 214, 0.16) !important;
+    box-shadow: 0 0 30px rgba(88, 86, 214, 0.18) !important;
+}
+
+/* Footer shapes - No colors (removed styling) */
+.footer-area .footer-shape.shape-1,
+.footer-area .footer-shape.shape-2,
+.footer-area .footer-shape.shape-3,
+.footer-area .footer-shape.shape-4,
+.footer-area .footer-shape.shape-5,
+.footer-area .footer-shape.shape-6,
+.footer-area .footer-shape.shape-7,
+.footer-area .footer-shape.shape-8 {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Download buttons styling */
+.download-content ul li a.app-store {
+    background-color: var(--volyx-primary) !important;
+    border-radius: 25px !important;
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.4) !important;
+    -moz-box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.4) !important;
+    box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.4) !important;
+}
+
+.download-content ul li a.app-store:hover {
+    -webkit-box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.4) !important;
+    -moz-box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.4) !important;
+    box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.4) !important;
+}
+
+.download-content ul li a.play-store {
+    background-color: white !important;
+    border: 2px solid var(--volyx-primary) !important;
+    border-radius: 25px !important;
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.2) !important;
+    -moz-box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.2) !important;
+    box-shadow: 0px 4px 10px 0px rgba(31, 41, 50, 0.2) !important;
+}
+
+.download-content ul li a.play-store:hover {
+    -webkit-box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.3) !important;
+    -moz-box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.3) !important;
+    box-shadow: 0px 4px 25px 0px rgba(31, 41, 50, 0.3) !important;
+}
+
+/* Make Google Play Store image dark blue */
+.download-content ul li a.play-store img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(2476%) hue-rotate(200deg) brightness(95%) contrast(86%) !important;
+}
+
+/* Back to top button - dark blue */
+.back-to-top {
+    background: var(--volyx-primary) !important;
+}
+
+.back-to-top:hover {
+    background-color: rgba(31, 41, 50, 0.8) !important;
+}
+
+/* Screenshot carousel pagination dots - dark blue */
+.swiper-pagination .swiper-pagination-bullet {
+    border-color: var(--volyx-primary) !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--volyx-primary) !important;
+} 
